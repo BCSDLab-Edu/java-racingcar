@@ -1,12 +1,15 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Randoms;
 import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.Test;
+import java.util.Scanner;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.InstanceOfAssertFactories.ARRAY;
 
 class ApplicationTest extends NsTest {
     private static final int MOVING_FORWARD = 4;
@@ -31,8 +34,13 @@ class ApplicationTest extends NsTest {
         );
     }
 
+    public class Random{
+
+    }
     @Override
     public void runMain() {
+
         Application.main(new String[]{});
+
     }
 }
