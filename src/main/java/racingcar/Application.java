@@ -48,18 +48,18 @@ class Car {
 class RaceManager {
     public void startRace() {
         List<String> carNames = getCarnames();
-        int trycount = getTryCount();
+        int getTryCount = getTryCount();
 
         Race race =new Race(carNames);
-        race.start(trycount);
+        race.start(getTryCount);
 
         Print.printWinner(race.getwinner());
     }
 
     public static List<String> getCarnames() {
         System.out.println("경주할 자동차 이름을 입력하시오.(,로 구분)");
-        List<String> carNames = new ArrayList<>(List.of(Console.readLine().split(",")));
-        return carNames;
+        List<String> raceCars = new ArrayList<>(List.of(Console.readLine().split(",")));
+        return raceCars;
     }
     private int getTryCount(){
         System.out.println("시도할 회수는 몇회인가요?");
