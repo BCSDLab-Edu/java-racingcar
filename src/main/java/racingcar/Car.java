@@ -6,9 +6,10 @@ public class Car {
     private String name;
     private int location;
 
-    public Car(String s) {
-        if(s.length() > 5) throw new IllegalArgumentException();
-        name = s;
+    public Car(String str) {
+        if(str == null || str.isEmpty()) throw new IllegalArgumentException();
+        if(str.length() > 5) throw new IllegalArgumentException();
+        name = str;
         location = 0;
     }
 

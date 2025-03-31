@@ -1,6 +1,8 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.Console;
+
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -54,8 +56,17 @@ public class CarRacing {
         if(str == null || str.isEmpty()) throw new IllegalArgumentException();
         addCars(str);
 
+        int r;
         System.out.println("시도할 회수는 몇회인가요?");
-        int r = Integer.parseInt(Console.readLine());
+        while(true) {
+            try {
+                r = Integer.parseInt(Console.readLine());
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("숫자를 입력해 주세요.");
+            }
+        }
+
         if(r <= 0) throw new IllegalArgumentException();
         setRound(r);
 
@@ -64,6 +75,7 @@ public class CarRacing {
             moveCars();
             statePrint();
         }
+        
         referee();
         resultPrint();
     }
