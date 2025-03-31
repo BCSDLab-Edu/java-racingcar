@@ -13,24 +13,24 @@ public class CarRacing {
 
     public CarRacing() {}
 
-    public void addCars(String str) {
+    private void addCars(String str) {
         String[] names = str.split(",");
         for (var name : names) {
             cars.add(new Car(name));
         }
     }
 
-    public void setRound(int r) {
+    private void setRound(int r) {
         round = r;
     }
 
-    public void moveCars() {
+    private void moveCars() {
         for (Car car : cars) {
             car.move();
         }
     }
 
-    public void referee() {
+    private void referee() {
         cars.sort((Car o1, Car o2) -> o2.getLocation() - o1.getLocation());
         int max = cars.get(0).getLocation();
         for (Car car : cars) {
@@ -39,14 +39,14 @@ public class CarRacing {
         }
     }
 
-    public void statePrint() {
+    private void statePrint() {
         for (Car car : cars) {
             System.out.printf("%s : %s%n", car.getName(), "-".repeat(car.getLocation()));
         }
         System.out.println();
     }
 
-    public void resultPrint() {
+    private void resultPrint() {
         System.out.printf("최종 우승자 : %s\n", String.join(", ", winners));
     }
 
@@ -75,7 +75,7 @@ public class CarRacing {
             moveCars();
             statePrint();
         }
-        
+
         referee();
         resultPrint();
     }
