@@ -38,7 +38,7 @@ public class Racing
     {
         if (value <= 0)
         {
-            throw new IllegalArgumentException("시도 횟수는 1 이상이어야 합니다.");
+            throw new IllegalArgumentException("시도 회수는 1 이상이어야 합니다.");
         }
     }
 
@@ -72,7 +72,7 @@ public class Racing
     {
         int maxPosition = findMaxPosition();
         List<String> winners = getWinners(maxPosition);
-        System.out.println("최종 우승자" + String.join(", ", winners));
+        System.out.println("최종 우승자 : " + String.join(", ", winners));
     }
 
     private List<String> getWinners(int maxPosition)
