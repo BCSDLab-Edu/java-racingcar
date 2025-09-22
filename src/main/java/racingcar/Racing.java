@@ -46,6 +46,7 @@ public class Racing
         for (int i = 0; i < rounds; i++)
         {
             raceRound();
+            printRaceStatus();
         }
     }
 
@@ -55,5 +56,14 @@ public class Racing
         {
             car.move();
         }
+    }
+
+    private void printRaceStatus()
+    {
+        for (Car car : cars)
+        {
+            System.out.println(car.getName() + " : " + "-".repeat(car.getPosition()));
+        }
+        System.out.println();
     }
 }
