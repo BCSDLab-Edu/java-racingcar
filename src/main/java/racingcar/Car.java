@@ -17,7 +17,7 @@ public class Car {
         this.position++;
     }
 
-    public String getName() {}
+    public String getName() {return name;}
 
-    public int getPosition(int position) {}
+    public int getPosition(int position) {return position;}
 }
