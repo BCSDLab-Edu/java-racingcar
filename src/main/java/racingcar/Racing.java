@@ -15,6 +15,7 @@ public class Racing
         inputCars();
         inputRounds();
         play();
+        printWinner();
     }
 
     private void inputCars()
@@ -65,5 +66,38 @@ public class Racing
             System.out.println(car.getName() + " : " + "-".repeat(car.getPosition()));
         }
         System.out.println();
+    }
+
+    private void printWinner()
+    {
+        int maxPosition = findMaxPosition();
+        List<String> winners = getWinners(maxPosition);
+        System.out.println("최종 우승자" + String.join(", ", winners));
+    }
+
+    private List<String> getWinners(int maxPosition)
+    {
+        List<String> winners = new ArrayList<>();
+        for (Car car : cars)
+        {
+            if (car.getPosition() == maxPosition)
+            {
+                winners.add(car.getName());
+            }
+        }
+        return winners;
+    }
+
+    private int findMaxPosition()
+    {
+        int max = 0;
+        for (Car car : cars)
+        {
+            if (car.getPosition() > max)
+            {
+                max = car.getPosition();
+            }
+        }
+        return max;
     }
 }
