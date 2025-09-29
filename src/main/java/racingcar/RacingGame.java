@@ -1,4 +1,5 @@
 package racingcar;
+import camp.nextstep.edu.missionutils.Randoms;
 import java.util.*;
 public class RacingGame {
     private List<Car> cars;
@@ -13,6 +14,12 @@ public class RacingGame {
         }
         List<Car> winners = getWinners();
         Output.printWinners(winners);
+    }
+    private void raceOnce() {
+        for (Car car : cars) {
+            int number = Randoms.pickNumberInRange(0, 9);
+            car.move(number);
+        }
     }
     private List<Car> getWinners() {
         int maxPosition = cars.stream()
