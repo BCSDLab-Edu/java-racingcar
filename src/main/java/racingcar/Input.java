@@ -13,9 +13,4 @@ public class Input{
         }
         return cars;
     }
-    public static int readTryCount() {
-        System.out.println("시도할 회수는 몇회인가요?");
-        String input = Console.readLine();
-        return Validator.validateTryCount(input);
-    }
 }
