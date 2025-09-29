@@ -10,6 +10,8 @@ public class Car {
             car.move(number);
         }
     }
-
     public void move(int number){if(number>=4){position++;}}
+    public String getName(){return name;}
+    public int getPosition(){return position;}
+    public String getPositionSign(){return "-".repeat(position);}
 }
