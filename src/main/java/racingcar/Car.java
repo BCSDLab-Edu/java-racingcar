@@ -10,5 +10,6 @@ public class Car {
             car.move(number);
         }
     }
+
     public void move(int number){if(number>=4){position++;}}
 }
