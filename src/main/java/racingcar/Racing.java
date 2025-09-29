@@ -17,7 +17,7 @@ public class Racing
         }
     }
 
-    private void raceRound()
+    public void raceRound()
     {
         for (Car car : cars)
         {
@@ -26,7 +26,7 @@ public class Racing
     }
 
 
-    private List<String> getWinners()
+    public List<String> getWinners()
     {
         int maxPosition = findMaxPosition();
         List<String> winners = new ArrayList<>();
@@ -51,5 +51,10 @@ public class Racing
             }
         }
         return max;
+    }
+
+    public List<Car> getCars()
+    {
+        return cars;
     }
 }
