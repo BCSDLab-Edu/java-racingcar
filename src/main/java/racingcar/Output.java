@@ -3,7 +3,7 @@ package racingcar;
 import java.util.List;
 
 public class Output {
-    private void printRaceStatus(List<Car> cars)
+    public void printRaceStatus(List<Car> cars)
     {
         for (Car car : cars)
         {
@@ -12,7 +12,7 @@ public class Output {
         System.out.println();
     }
 
-    private void printWinner(List<String> winners)
+    public void printWinner(List<String> winners)
     {
         System.out.println("최종 우승자 : " + String.join(", ", winners));
     }
