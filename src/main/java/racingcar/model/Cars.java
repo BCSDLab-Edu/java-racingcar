@@ -1,46 +1,53 @@
 package racingcar.model;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class Cars {
-    private final List<Car> cars;
+    private final Car[] cars;
 
-    public Cars(List<Car> cars) {
+    public Cars(Car[] cars) {
         this.cars = cars;
     }
 
-    public List<String> getWinningCarNames() {
+    public String[] getWinningCarNames() {
         int maxPosition = getMaxPosition();
-
-        List<Car> winningCars = getWinningCars(maxPosition);
-
-        return winningCars.stream()
-                .map(Car::getName)
-                .collect(Collectors.toList());
+        int winnerCount = countCarsAtPosition(maxPosition);
+        String[] winningNames = new String[winnerCount];
+        int index = 0;
+        for (int i = 0; i < cars.length; i++) {
+            if (cars[i].getPosition() == maxPosition) {
+                winningNames[index] = cars[i].getName();
+                index++;
+            }
+        }
+        return winningNames;
     }
 
     private int getMaxPosition() {
         int maxPosition = 0;
-        for (Car car : cars) {
-            maxPosition = Math.max(maxPosition, car.getPosition());
+        for (int i = 0; i < cars.length; i++) {
+            if (cars[i].getPosition() > maxPosition) {
+                maxPosition = cars[i].getPosition();
+            }
         }
         return maxPosition;
     }
 
-    private List<Car> getWinningCars(int maxPosition) {
-        return cars.stream()
-                .filter(car -> car.getPosition() == maxPosition)
-                .collect(Collectors.toList());
+    private int countCarsAtPosition(int position) {
+        int count = 0;
+        for (int i = 0; i < cars.length; i++) {
+            if (cars[i].getPosition() == position) {
+                count++;
+            }
+        }
+        return count;
     }
 
-    public List<Car> getCars(){
+    public Car[] getCars() {
         return cars;
     }
 
-    public void moveCars(){
-        for (Car car : cars) {
-            car.moveCar();
+    public void moveCars() {
+        for (int i = 0; i < cars.length; i++) {
+            cars[i].moveCar();
         }
     }
 }

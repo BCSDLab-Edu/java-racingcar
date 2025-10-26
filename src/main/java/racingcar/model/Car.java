@@ -1,9 +1,9 @@
 package racingcar.model;
 
-import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.ErrorMessage;
+import camp.nextstep.edu.missionutils.Randoms;
 
-public class Car{
+public class Car {
     private final String name;
     private int position;
 
@@ -19,21 +19,21 @@ public class Car{
         return new Car(name);
     }
 
-    public void moveCar(){
+    public void moveCar() {
         if (rollDice() >= 4) {
             position += 1;
         }
     }
 
     private int rollDice() {
-        return Randoms.pickNumberInRange(0,9);
+        return Randoms.pickNumberInRange(0, 9);
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public int getPosition(){
+    public int getPosition() {
         return position;
     }
 }
