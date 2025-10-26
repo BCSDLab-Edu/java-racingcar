@@ -1,18 +1,20 @@
 package racingcar.view;
 
-import java.util.Arrays;
-import java.util.List;
-
-import static camp.nextstep.edu.missionutils.Console.readLine;
+import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
-    public List<String> inputCarName() {
+    public String[] inputCarName() {
         System.out.println("차의 이름을 입력해주세요(구분은 ,로)");
-        return Arrays.stream(readLine().split(",")).toList();
+        String[] rawNames = Console.readLine().split(",");
+        String[] names = new String[rawNames.length];
+        for (int i = 0; i < rawNames.length; i++) {
+            names[i] = rawNames[i].trim();
+        }
+        return names;
     }
 
     public int inputRaceCount() {
         System.out.println("경주 횟수를 입력해주세요.");
-        return Integer.parseInt(readLine());
+        return Integer.parseInt(Console.readLine());
     }
 }
