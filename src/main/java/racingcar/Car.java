@@ -4,31 +4,26 @@ import camp.nextstep.edu.missionutils.Randoms;
 
 public class Car {
     private String name;
-    private int moveDistance;
-    private int totalDistance;
+    private String distance;
 
     public Car(String name){
         this.name = name;
-        this.moveDistance=0;
-        this.totalDistance=0;
+        this.distance ="";
     }
 
-    public int move(){
+    public void move(){
         int temp=Randoms.pickNumberInRange(0,9);
 
         if(temp>=4){
-            moveDistance=temp;
+            distance +="-";
         }
-        else{
-            moveDistance=0;
-        }
-
-        totalDistance+=moveDistance;
-
-        return moveDistance;
     }
 
-    public int GetTotalDistance(){
-        return totalDistance;
+    public String getName(){
+        return name;
+    }
+
+    public String getDistance(){
+        return distance;
     }
 }
