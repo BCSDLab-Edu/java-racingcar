@@ -13,7 +13,7 @@ public class Car {
         this.totalDistance=0;
     }
 
-    public int Move(){
+    public int move(){
         int temp=Randoms.pickNumberInRange(0,9);
 
         if(temp>=4){
