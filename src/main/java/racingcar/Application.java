@@ -7,6 +7,6 @@ public class Application {
         // TODO: 프로그램 구현
         List<Car> cars =CarInput.carInput();
         Racing.racing(cars);
-        Manager.winnerPrint(cars);
+        WinnerPrint.winnerPrint(cars);
     }
 }

@@ -2,9 +2,8 @@ package racingcar;
 
 import java.util.ArrayList;
 import java.util.List;
-import camp.nextstep.edu.missionutils.Console;
 
-public class Manager {
+public class WinnerPrint {
     public static void winnerPrint(List<Car> cars){
         int winnerLength = 0;
         int currentLength = 0;
