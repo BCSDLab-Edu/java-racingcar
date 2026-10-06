@@ -6,22 +6,6 @@ import camp.nextstep.edu.missionutils.Console;
 
 public class Manager {
 
-    public static List<Car> carInput(){
-        List<Car> cars = new ArrayList<>();
-        String temp=Console.readLine();
-        String[] carNames=temp.split(",");
-
-        for (String car : carNames){
-            if(car.length()>5){
-                throw new IllegalArgumentException();
-            }
-
-            cars.add(new RacingCar(car));
-        }
-
-        return cars;
-    }
-
     public static void racing(List<Car> cars){
         String temp = Console.readLine();
         int count = Integer.parseInt(temp);

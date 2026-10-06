@@ -11,6 +11,7 @@ public class RacingCar implements Car{
         this.distance ="";
     }
 
+    @Override
     public void move(){
         int temp=Randoms.pickNumberInRange(0,9);
 
@@ -19,10 +20,12 @@ public class RacingCar implements Car{
         }
     }
 
+    @Override
     public String getName(){
         return name;
     }
 
+    @Override
     public String getDistance(){
         return distance;
     }
