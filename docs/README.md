@@ -5,3 +5,4 @@
 2주차:
 Car클래스 추상화
 CarInput기능 분리
+Racing기능 분리
