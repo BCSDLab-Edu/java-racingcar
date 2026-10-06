@@ -16,7 +16,7 @@ public class Manager {
                 throw new IllegalArgumentException();
             }
 
-            cars.add(new Car(car));
+            cars.add(new RacingCar(car));
         }
 
         return cars;
